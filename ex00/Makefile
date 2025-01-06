@@ -1,4 +1,4 @@
-NAME := array
+NAME := easyfind
 FLAGS := -Wall -Wextra -Werror -std=c++98 -g
 FILES := main.cpp
 OBJ := $(FILES:.cpp=.o)
