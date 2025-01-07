@@ -1,19 +1,10 @@
 #include "easyfind.hpp"
 #include <vector>
 #include <list>
-#include <map>
 #include <iostream>
 
 int main()
 {
-	// std::map<int, std::string> map;
-	// map[1] = "one";
-	// map[2] = "two";
-	// map[3] = "three";
-
-	// std::string *str = static_cast<std::string*>(easyfind(map, 2));
-
-	// std::cout << *str << std::endl;
 
 	std::vector<int> vec;
 	vec.push_back(1);
@@ -23,4 +14,25 @@ int main()
 	int *i = static_cast<int*>(easyfind(vec, 2));
 
 	std::cout << *i << std::endl;
+
+	std::list<int> lst;
+
+	lst.push_back(14);
+	lst.push_back(17);
+	lst.push_back(2);
+	lst.push_back(17);
+	try
+	{
+		int *j = static_cast<int*>(easyfind(vec, 24));
+		std::cout << *j << std::endl;
+		j = static_cast<int*>(easyfind(vec, 17));
+		std::cout << *j << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+
+
 }
