@@ -1,6 +1,6 @@
 NAME := span
 FLAGS := -Wall -Wextra -Werror -std=c++98 -g
-FILES := main.cpp
+FILES := main.cpp Span.cpp
 OBJ := $(FILES:.cpp=.o)
 
 all: $(NAME)
