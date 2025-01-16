@@ -21,17 +21,17 @@ class MutantStack : public std::stack<Type, Container>
 
 		MutantStack &operator=(const MutantStack &rhs);
 
-		iterator begin() { return this->c.rbegin(); }
-		iterator end() { return this->c.rend(); }
+		iterator begin();
+		iterator end();
 
-		const_iterator begin() const { return this->c.rbegin(); }
-		const_iterator end() const { return this->c.rend(); }
+		const_iterator begin() const;
+		const_iterator end() const;
 
-		reverse_iterator rbegin() { return this->c.begin(); }
-		reverse_iterator rend() { return this->c.end(); }
+		reverse_iterator rbegin();
+		reverse_iterator rend();
 
-		const_reverse_iterator rbegin() const { return this->c.begin(); }
-		const_reverse_iterator rend() const { return this->c.end(); }
+		const_reverse_iterator rbegin() const;
+		const_reverse_iterator rend() const;
 
 
 };
