@@ -20,7 +20,7 @@ Span &Span::operator=(const Span &span)
 void Span::addNumber(int n)
 {
 	if (v.size() >= N)
-		throw std::exception();
+		throw std::invalid_argument("Too many numbers");
 	v.push_back(n);
 }
 
@@ -28,37 +28,37 @@ void Span::addNumber(int n)
 void Span::addNumber(int *begin, int *end)
 {
 	if (v.size() + (end - begin) > N)
-		throw std::exception();
+		throw std::invalid_argument("Too many numbers");
 	v.insert(v.end(), begin, end);
 }
 
-int Span::shortestSpan()
+size_t Span::shortestSpan()
 {
-	unsigned int size = v.size();
+	size_t size = v.size();
 	if (size <= 1)
-		throw std::exception();
-	int min = -1;
-	for(unsigned int i = 0; i < size - 1; i++){
-		int s = abs(v[i] - v[i + 1]);
+		throw std::invalid_argument("Too many numbers");
+	long min = -1;
+	for(size_t i = 0; i < size - 1; i++){
+		long s = std::abs(static_cast<long>(v[i]) - static_cast<long>(v[i + 1]));
 		if (s < min || min < 0)
 			min = s;
 	}
-	return min;
+	return static_cast<size_t>(min);
 	
 }
 
-int Span::longestSpan()
+size_t Span::longestSpan()
 {
-	unsigned int size = v.size();
+	size_t size = v.size();
 	if (size <= 1)
 		throw std::exception();
-	int max = -1;
-	for(unsigned int i = 0; i < size - 1; i++){
-		int s = abs(v[i] - v[i + 1]);
+	long max = -1;
+	for(size_t i = 0; i < size - 1; i++){
+		long s = std::abs(static_cast<long>(v[i]) - static_cast<long>(v[i + 1]));
 		if (s > max)
 			max = s;
 	}
-	return max;
+	return static_cast<size_t>(max);
 	
 }
 

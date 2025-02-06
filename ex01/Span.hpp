@@ -1,5 +1,6 @@
 #pragma once
 #include <exception>
+#include <stdexcept>
 #include <vector>
 #include <algorithm>
 
@@ -31,6 +32,6 @@ class Span
 				++begin;
 			}
 		}
-		int shortestSpan();
-		int longestSpan();
+		size_t shortestSpan();
+		size_t longestSpan();
 };

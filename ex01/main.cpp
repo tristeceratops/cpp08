@@ -1,6 +1,7 @@
 #include "Span.hpp"
 #include <iostream>
 #include <vector>
+#include <limits>
 
 int main()
 {
@@ -54,6 +55,21 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+	try
+	{
+		Span limitSpan(10);
+		limitSpan.addNumber(std::numeric_limits<int>::min());
+		limitSpan.addNumber(std::numeric_limits<int>::max()); 
+		limitSpan.addNumber(std::numeric_limits<int>::min());
+		std::cout << limitSpan.shortestSpan() << std::endl;
+		std::cout << limitSpan.longestSpan() << std::endl;
+
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 
 
 	return 0;
