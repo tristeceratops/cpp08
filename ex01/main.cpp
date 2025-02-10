@@ -69,6 +69,18 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+	try
+	{
+		Span negativeSpan(-10);
+		negativeSpan.addNumber(5);
+		std::cout << negativeSpan.shortestSpan() << std::endl;
+		std::cout << negativeSpan.longestSpan() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	
 
 

@@ -21,47 +21,47 @@ MutantStack<Type, Container> &MutantStack<Type, Container>::operator=(const Muta
 template <class Type, class Container>
 typename MutantStack<Type, Container>::iterator MutantStack<Type, Container>::begin()
 {
-	return this->c.rbegin();
+	return this->c.begin();
 }
 
 template <class Type, class Container>
 typename MutantStack<Type, Container>::iterator MutantStack<Type, Container>::end()
 {
-	return this->c.rend();
+	return this->c.end();
 }
 
 template <class Type, class Container>
 typename MutantStack<Type, Container>::const_iterator MutantStack<Type, Container>::begin() const
 {
-	return this->c.rbegin();
+	return this->c.begin();
 }
 
 template <class Type, class Container>
 typename MutantStack<Type, Container>::const_iterator MutantStack<Type, Container>::end() const
 {
-	return this->c.rend();
+	return this->c.end();
 }
 
 template <class Type, class Container>
 typename MutantStack<Type, Container>::reverse_iterator MutantStack<Type, Container>::rbegin()
 {
-	return this->c.begin();
+	return this->c.rbegin();
 }
 
 template <class Type, class Container>
 typename MutantStack<Type, Container>::reverse_iterator MutantStack<Type, Container>::rend()
 {
-	return this->c.end();
+	return this->c.rend();
 }
 
 template <class Type, class Container>
 typename MutantStack<Type, Container>::const_reverse_iterator MutantStack<Type, Container>::rbegin() const
 {
-	return this->c.begin();
+	return this->c.rbegin();
 }
 
 template <class Type, class Container>
 typename MutantStack<Type, Container>::const_reverse_iterator MutantStack<Type, Container>::rend() const
 {
-	return this->c.end();
+	return this->c.rend();
 }

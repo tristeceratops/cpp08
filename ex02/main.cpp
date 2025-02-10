@@ -1,5 +1,7 @@
 #include <iostream>
 #include <list>
+#include <vector>
+#include <deque>
 #include "MutantStack.hpp"
 #include "MutantStack.tpp"
 
@@ -30,16 +32,16 @@ int main()
 	//list test
 	std::cout << "List test" << std::endl;
 	std::list<int> mlist;
-	mlist.push_front(5);
-	mlist.push_front(17);
-	std::cout << mlist.front() << std::endl;
-	mlist.pop_front();
-	std::cout << mlist.size() << std::endl;
-	mlist.push_front(3);
-	mlist.push_front(5);
-	mlist.push_front(737);
+	mlist.push_back(5);
+	mlist.push_back(17);
+	std::cout << "top is: " << mlist.back() << std::endl;
+	mlist.pop_back();
+	std::cout << "size is: " << mlist.size() << std::endl;
+	mlist.push_back(3);
+	mlist.push_back(5);
+	mlist.push_back(737);
 	//[...]
-	mlist.push_front(0);
+	mlist.push_back(0);
 	std::list<int>::iterator lit = mlist.begin();
 	std::list<int>::iterator lite = mlist.end();
 	++lit;
@@ -48,6 +50,29 @@ int main()
 	{
 		std::cout << *lit << std::endl;
 		++lit;
+	}
+
+	//vector test
+	std::cout << "List test" << std::endl;
+	std::vector<int> mVector;
+	mVector.push_back(5);
+	mVector.push_back(17);
+	std::cout << mVector.back() << std::endl;
+	mVector.pop_back();
+	std::cout << mVector.size() << std::endl;
+	mVector.push_back(3);
+	mVector.push_back(5);
+	mVector.push_back(737);
+	//[...]
+	mVector.push_back(0);
+	std::vector<int>::iterator Vit = mVector.begin();
+	std::vector<int>::iterator Vite = mVector.end();
+	++Vit;
+	--Vit;
+	while (Vit != Vite)
+	{
+		std::cout << *Vit << std::endl;
+		++Vit;
 	}
 	
 	return 0;
