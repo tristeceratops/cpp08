@@ -25,9 +25,7 @@ class Span
 			while (begin != end)
 			{
 				if (v.size() >= N)
-				{
 					throw std::exception();
-				}
 				v.push_back(*begin);
 				++begin;
 			}
